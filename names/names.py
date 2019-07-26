@@ -6,22 +6,9 @@ start_time = time.time()
 # names_1 = f.read().split("\n")  # List containing 10000 names
 # f.close()
 
-store = {}
-with open('names_1.txt', 'r') as f:
-    for name in f:
-        count = store.get(name, 0)
-        store[name] = count + 1
-
 # f = open('names_2.txt', 'r')
 # names_2 = f.read().split("\n")  # List containing 10000 names
 # f.close()
-
-duplicates = []
-with open('names_2.txt', 'r') as f:
-    for name in f:
-        if store.get(name, 0) >= 1:
-            duplicates.append(name[:-1])
-
 
 # duplicates = []
 # for name_1 in names_1:
@@ -29,16 +16,17 @@ with open('names_2.txt', 'r') as f:
 #         if name_1 == name_2:
 #             duplicates.append(name_1)
 
-# store = {}
-# duplicates = []
+store = {}
+with open('names_1.txt', 'r') as f:
+    for name in f:
+        count = store.get(name, 0)
+        store[name] = count + 1
 
-# for name in names_1:
-#     count = store.get(name, 0)
-#     store[name] = count + 1
-
-# for name in names_2:
-#     if store.get(name, 0) >= 1:
-#         duplicates.append(name)
+duplicates = []
+with open('names_2.txt', 'r') as f:
+    for name in f:
+        if store.get(name, 0) >= 1:
+            duplicates.append(name[:-1])
 
 end_time = time.time()
 print(f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
