@@ -13,7 +13,7 @@ Add your answers to the questions below.
    `O(n)`
 
 5) What is the runtime complexity of the provided code in `names.py`?
-   `O(n * m)`
+   `O(n*m)`
 
 6) What is the space complexity of the provided code in `names.py`?
    `O(n)`
